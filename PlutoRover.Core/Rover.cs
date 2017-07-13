@@ -25,9 +25,10 @@
             return true;
         }
 
-        public void Turn(Rotation rotation)
+        public bool Turn(Rotation rotation)
         {
             _heading = rotation == Rotation.Left ? _heading.RotateLeft() : _heading.RotateRight();
+            return true;
         }
 
         public string GetLocation()

@@ -13,21 +13,25 @@
         {
             foreach(var command in input ?? "")
             {
+                var result = true;
                 switch (command)
                 {
                     case 'F':
-                        _rover.Move(Direction.Forward);
+                        result = _rover.Move(Direction.Forward);
                         break;
                     case 'B':
-                        _rover.Move(Direction.Backwards);
+                        result = _rover.Move(Direction.Backwards);
                         break;
                     case 'L':
-                        _rover.Turn(Rotation.Left);
+                        result = _rover.Turn(Rotation.Left);
                         break;
                     case 'R':
-                        _rover.Turn(Rotation.Right);
+                        result = _rover.Turn(Rotation.Right);
                         break;
                 }
+
+                if(!result)
+                    break;
             }
 
             return _rover.GetLocation();
