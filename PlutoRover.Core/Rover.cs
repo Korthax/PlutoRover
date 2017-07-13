@@ -1,10 +1,12 @@
-﻿namespace PlutoRover.Core
+﻿using System;
+
+namespace PlutoRover.Core
 {
     public class Rover
     {
         private readonly Direction _direction;
-        private readonly int _x;
 
+        private int _x;
         private int _y;
 
         public Rover(int x, int y, Direction direction)
@@ -16,12 +18,40 @@
 
         public void MoveForwards()
         {
-            _y += _direction == Direction.N ? 1 : -1;
+            switch (_direction)
+            {
+                case Direction.N:
+                    _y += 1;
+                    break;
+                case Direction.E:
+                    _x += 1;
+                    break;
+                case Direction.S:
+                    _y -= 1;
+                    break;
+                case Direction.W:
+                    _x -= 1;
+                    break;
+            }
         }
 
         public void MoveBackwards()
         {
-            _y += _direction == Direction.N ? -1 : 1;
+            switch(_direction)
+            {
+                case Direction.N:
+                    _y -= 1;
+                    break;
+                case Direction.E:
+                    _x -= 1;
+                    break;
+                case Direction.S:
+                    _y += 1;
+                    break;
+                case Direction.W:
+                    _x += 1;
+                    break;
+            }
         }
 
         public string GetLocation()
