@@ -1,0 +1,1 @@
+dotnet run --project .\src\PlutoRover.App\PlutoRover.App.csproj

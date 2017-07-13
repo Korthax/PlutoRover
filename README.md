@@ -6,4 +6,8 @@
 
 ## Running the kata
 
-1. Run the powershell file ```./build.ps1``` to restore packages, build the solution and run the tests.
+Run the powershell file ```./build.ps1``` to restore packages, build the solution and run the tests.
+
+***or***
+
+Run the powershell file ```./run.ps1``` to run the console app.
