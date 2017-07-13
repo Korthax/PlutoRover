@@ -13,20 +13,10 @@
             _grid = grid;
         }
 
-        public bool MoveForwards()
+        public bool Move(Direction direction)
         {
-            var newPosition = _grid.Wrap(_position + Vector.From(_heading));
-
-            if (!_grid.IsValid(newPosition))
-                return false;
-
-            _position = newPosition;
-            return true;
-        }
-
-        public bool MoveBackwards()
-        {
-            var newPosition = _grid.Wrap(_position - Vector.From(_heading));
+            var vector = Vector.From(_heading);
+            var newPosition = _grid.Wrap(_position + (direction == Direction.Forward ? vector : Vector.Inverse(vector)));
 
             if (!_grid.IsValid(newPosition))
                 return false;

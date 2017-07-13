@@ -15,6 +15,11 @@ namespace PlutoRover.Core
         public int X { get; }
         public int Y { get; }
 
+        public static Vector Inverse(Vector vector)
+        {
+            return new Vector(-vector.X, -vector.Y);
+        }
+
         public static Vector From(Heading heading)
         {
             return Directions[heading];

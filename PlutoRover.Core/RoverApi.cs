@@ -16,10 +16,10 @@
                 switch (command)
                 {
                     case 'F':
-                        _rover.MoveForwards();
+                        _rover.Move(Direction.Forward);
                         break;
                     case 'B':
-                        _rover.MoveBackwards();
+                        _rover.Move(Direction.Backwards);
                         break;
                     case 'L':
                         _rover.TurnLeft();

@@ -15,7 +15,7 @@ namespace PlutoRover.Tests.UnitTests.GivenARover.FacingEast
             grid.Setup(x => x.IsValid(It.IsAny<Position>())).Returns(true);
 
             var subject = new Rover(Position.Zero, Heading.E, grid.Object);
-            subject.MoveBackwards();
+            subject.Move(Direction.Backwards);
 
             subject.GetLocation().Should().Be("-1,0,E");
         }
