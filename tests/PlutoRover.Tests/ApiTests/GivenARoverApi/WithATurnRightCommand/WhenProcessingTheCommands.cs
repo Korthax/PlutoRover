@@ -13,7 +13,7 @@ namespace PlutoRover.Tests.ApiTests.GivenARoverApi.WithATurnRightCommand
         [InlineData(Heading.W, "1,1,N")]
         public void ThenTheRoverShouldMoveForwardsInTheDirectionItIsFacing(Heading startingHeading, string expectedValue)
         {
-            var subject = new RoverApi(new Rover(new Position(1, 1), startingHeading));
+            var subject = new RoverApi(new Rover(new Position(1, 1), startingHeading, Grid.InitialiseFrom(100, 100)));
             var result = subject.Process("R");
 
             result.Should().Be(expectedValue);

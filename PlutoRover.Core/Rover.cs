@@ -2,23 +2,25 @@
 {
     public class Rover
     {
+        private readonly IGrid _grid;
         private Position _position;
         private Heading _heading;
 
-        public Rover(Position position, Heading heading)
+        public Rover(Position position, Heading heading, IGrid grid)
         {
             _position = position;
             _heading = heading;
+            _grid = grid;
         }
 
         public void MoveForwards()
         {
-            _position += Vector.From(_heading);
+            _position = _grid.Wrap(_position + Vector.From(_heading));
         }
 
         public void MoveBackwards()
         {
-            _position -= Vector.From(_heading);
+            _position = _grid.Wrap(_position - Vector.From(_heading));
         }
 
         public void TurnLeft()

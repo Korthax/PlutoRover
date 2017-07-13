@@ -1,6 +1,11 @@
 ﻿namespace PlutoRover.Core
 {
-    public class Grid
+    public interface IGrid
+    {
+        Position Wrap(Position position);
+    }
+
+    public class Grid : IGrid
     {
         private readonly bool[,] _grid;
 
@@ -17,11 +22,11 @@
 
         public Position Wrap(Position position)
         {
-            var x = position.X < _grid.GetUpperBound(0)
+            var x = position.X <= _grid.GetUpperBound(0)
                 ? position.X < 0 ? _grid.GetUpperBound(0) : position.X
                 : 0;
 
-            var y = position.Y < _grid.GetUpperBound(1)
+            var y = position.Y <= _grid.GetUpperBound(1)
                 ? position.Y < 0 ? _grid.GetUpperBound(1) : position.Y
                 : 0;
 

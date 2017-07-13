@@ -13,7 +13,7 @@ namespace PlutoRover.Tests.ApiTests.GivenARoverApi.WithNoInput
         [InlineData(10, 10, Heading.N, "10,10,N")]
         public void ThenTheStartingLocationIsReturned(int x, int y, Heading heading, string expectedValue)
         {
-            var subject = new RoverApi(new Rover(new Position(x, y), heading));
+            var subject = new RoverApi(new Rover(new Position(x, y), heading, Grid.InitialiseFrom(100, 100)));
             var result = subject.Process(null);
 
             result.Should().Be(expectedValue);

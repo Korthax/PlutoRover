@@ -9,8 +9,10 @@ namespace PlutoRover.Tests.UnitTests.GivenAGrid.WithAPositionOffTheGrid
         [Theory]
         [InlineData(-1, 10, 99, 10)]
         [InlineData(100, 10, 0, 10)]
+        [InlineData(99, 10, 99, 10)]
         [InlineData(10, -1, 10, 99)]
         [InlineData(10, 100, 10, 0)]
+        [InlineData(10, 99, 10, 99)]
         public void ThenThePositionIsWrappedAroundToTheOtherSideCorrectly(int x, int y, int expectedX, int expectedY)
         {
             var subject = Grid.InitialiseFrom(100, 100);
