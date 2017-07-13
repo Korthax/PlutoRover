@@ -4,20 +4,20 @@ namespace PlutoRover.Core
 {
     public class Vector
     {
-        private static readonly Dictionary<Direction, Vector> Directions = new Dictionary<Direction, Vector>
+        private static readonly Dictionary<Heading, Vector> Directions = new Dictionary<Heading, Vector>
         {
-            [Direction.N] = new Vector(0, 1),
-            [Direction.S] = new Vector(0, -1),
-            [Direction.E] = new Vector(1, 0),
-            [Direction.W] = new Vector(-1, 0)
+            [Heading.N] = new Vector(0, 1),
+            [Heading.S] = new Vector(0, -1),
+            [Heading.E] = new Vector(1, 0),
+            [Heading.W] = new Vector(-1, 0)
         };
 
         public int X { get; }
         public int Y { get; }
 
-        public static Vector From(Direction direction)
+        public static Vector From(Heading heading)
         {
-            return Directions[direction];
+            return Directions[heading];
         }
 
         public Vector(int x, int y)

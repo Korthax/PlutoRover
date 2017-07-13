@@ -9,7 +9,7 @@ namespace PlutoRover.Tests.UnitTests.GivenARover.FacingEast
         [Fact]
         public void ThenTheXCoordinateDecreasesByOne()
         {
-            var subject = new Rover(Position.Zero, Direction.E);
+            var subject = new Rover(Position.Zero, Heading.E);
             subject.MoveBackwards();
 
             subject.GetLocation().Should().Be("-1,0,E");

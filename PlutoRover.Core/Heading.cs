@@ -1,6 +1,6 @@
 ﻿namespace PlutoRover.Core
 {
-    public enum Direction : ushort
+    public enum Heading : ushort
     {
         N = 0,
         E = 1,

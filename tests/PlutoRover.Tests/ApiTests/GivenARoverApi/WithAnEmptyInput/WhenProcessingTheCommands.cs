@@ -9,7 +9,7 @@ namespace PlutoRover.Tests.ApiTests.GivenARoverApi.WithAnEmptyInput
         [Fact]
         public void ThenTheStartingLocationIsReturned()
         {
-            var subject = new RoverApi(new Rover(Position.Zero, Direction.N));
+            var subject = new RoverApi(new Rover(Position.Zero, Heading.N));
             var result = subject.Process(string.Empty);
 
             result.Should().Be("0,0,N");

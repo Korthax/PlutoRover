@@ -7,13 +7,13 @@ namespace PlutoRover.Tests.ApiTests.GivenARoverApi.WithABackwardsCommand
     public class WhenProcessingTheCommands
     {
         [Theory]
-        [InlineData(Direction.N, "1,0,N")]
-        [InlineData(Direction.E, "0,1,E")]
-        [InlineData(Direction.S, "1,2,S")]
-        [InlineData(Direction.W, "2,1,W")]
-        public void ThenTheRoverShouldMoveBackwardsInTheDirectionItIsFacing(Direction startingDirection, string expectedValue)
+        [InlineData(Heading.N, "1,0,N")]
+        [InlineData(Heading.E, "0,1,E")]
+        [InlineData(Heading.S, "1,2,S")]
+        [InlineData(Heading.W, "2,1,W")]
+        public void ThenTheRoverShouldMoveBackwardsInTheDirectionItIsFacing(Heading startingHeading, string expectedValue)
         {
-            var subject = new RoverApi(new Rover(new Position(1, 1), startingDirection));
+            var subject = new RoverApi(new Rover(new Position(1, 1), startingHeading));
             var result = subject.Process("B");
 
             result.Should().Be(expectedValue);
