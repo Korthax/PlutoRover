@@ -7,7 +7,7 @@ namespace PlutoRover.Tests.UnitTests.GivenARover.FacingNorth
     public class WhenMovingBackwards
     {
         [Fact]
-        public void ThenTheYCoordinateIncrementsByOne()
+        public void ThenTheYCoordinateDecreasesByOne()
         {
             var subject = new Rover(0, 0, Direction.N);
             subject.MoveBackwards();
