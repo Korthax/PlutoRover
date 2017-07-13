@@ -6,11 +6,14 @@ namespace PlutoRover.Tests.UnitTests.GivenAGrid.WithNoObstacles
 {
     public class WhenValidatingAPositionOnTheGrid
     {
-        [Fact]
-        public void ThenItIsValid()
+        [Theory]
+        [InlineData(0, 0)]
+        [InlineData(10, 10)]
+        [InlineData(99, 9)]
+        public void ThenItIsValid(int x, int y)
         {
             var subject = Grid.InitialiseFrom(100, 100);
-            var result = subject.IsValid(new Position(10, 10));
+            var result = subject.IsValid(new Position(x, y));
             result.Should().BeTrue();
         }
     }

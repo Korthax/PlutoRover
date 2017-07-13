@@ -41,7 +41,9 @@
 
         public bool IsValid(Position position)
         {
-            return _grid[position.X, position.Y] == false;
+            return position.X >= 0 && position.X <= _grid.GetUpperBound(0)
+                   && position.Y >= 0 && position.Y <= _grid.GetUpperBound(1)
+                   && _grid[position.X, position.Y] == false;
         }
     }
 }
