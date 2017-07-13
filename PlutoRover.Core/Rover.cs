@@ -19,6 +19,11 @@
             _y += 1;
         }
 
+        public void MoveBackwards()
+        {
+            _y -= 1;
+        }
+
         public string GetLocation()
         {
             return $"{_x},{_y},{_direction}";
