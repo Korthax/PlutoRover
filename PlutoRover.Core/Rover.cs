@@ -5,58 +5,27 @@ namespace PlutoRover.Core
     public class Rover
     {
         private readonly Direction _direction;
+        private Position _position;
 
-        private int _x;
-        private int _y;
-
-        public Rover(int x, int y, Direction direction)
+        public Rover(Position position, Direction direction)
         {
-            _x = x;
-            _y = y;
+            _position = position;
             _direction = direction;
         }
 
         public void MoveForwards()
         {
-            switch (_direction)
-            {
-                case Direction.N:
-                    _y += 1;
-                    break;
-                case Direction.E:
-                    _x += 1;
-                    break;
-                case Direction.S:
-                    _y -= 1;
-                    break;
-                case Direction.W:
-                    _x -= 1;
-                    break;
-            }
+            _position += Vector.From(_direction);
         }
 
         public void MoveBackwards()
         {
-            switch(_direction)
-            {
-                case Direction.N:
-                    _y -= 1;
-                    break;
-                case Direction.E:
-                    _x -= 1;
-                    break;
-                case Direction.S:
-                    _y += 1;
-                    break;
-                case Direction.W:
-                    _x += 1;
-                    break;
-            }
+            _position -= Vector.From(_direction);
         }
 
         public string GetLocation()
         {
-            return $"{_x},{_y},{_direction}";
+            return $"{_position.X},{_position.Y},{_direction}";
         }
     }
 }

@@ -9,7 +9,7 @@ namespace PlutoRover.Tests.UnitTests.GivenARover.FacingSouth
         [Fact]
         public void ThenTheYCoordinateIncreasesByOne()
         {
-            var subject = new Rover(0, 0, Direction.S);
+            var subject = new Rover(Position.Zero, Direction.S);
             subject.MoveBackwards();
 
             subject.GetLocation().Should().Be("0,1,S");
