@@ -22,10 +22,10 @@
                         _rover.Move(Direction.Backwards);
                         break;
                     case 'L':
-                        _rover.TurnLeft();
+                        _rover.Turn(Rotation.Left);
                         break;
                     case 'R':
-                        _rover.TurnRight();
+                        _rover.Turn(Rotation.Right);
                         break;
                 }
             }

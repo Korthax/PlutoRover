@@ -25,14 +25,9 @@
             return true;
         }
 
-        public void TurnLeft()
+        public void Turn(Rotation rotation)
         {
-            _heading = _heading == 0 ? Heading.Count - 1 : _heading - 1;
-        }
-
-        public void TurnRight()
-        {
-            _heading = _heading == Heading.Count - 1 ? 0 : _heading + 1;
+            _heading = rotation == Rotation.Left ? _heading.RotateLeft() : _heading.RotateRight();
         }
 
         public string GetLocation()
