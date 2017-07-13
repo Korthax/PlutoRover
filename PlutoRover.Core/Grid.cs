@@ -15,6 +15,12 @@
             return new Grid(data);
         }
 
+        public Grid AddObstacle(Position position)
+        {
+             _grid[position.X, position.Y] = true;
+            return this;
+        }
+
         private Grid(bool[,] grid)
         {
             _grid = grid;
@@ -31,6 +37,11 @@
                 : 0;
 
             return new Position(x, y);
+        }
+
+        public bool IsValid(Position position)
+        {
+            return _grid[position.X, position.Y] == false;
         }
     }
 }
