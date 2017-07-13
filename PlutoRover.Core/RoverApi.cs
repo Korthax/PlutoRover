@@ -2,9 +2,16 @@
 {
     public class RoverApi
     {
+        private readonly Rover _rover;
+
+        public RoverApi(Rover rover)
+        {
+            _rover = rover;
+        }
+
         public string Process(string input)
         {
-            return "0,0,N";
+            return _rover.GetLocation();
         }
     }
 }
