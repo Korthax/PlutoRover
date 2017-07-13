@@ -4,7 +4,7 @@ using Xunit;
 
 namespace PlutoRover.Tests.ApiTests.GivenARoverApi.WithNoInput
 {
-    public class WhenProcessing
+    public class WhenProcessingTheCommands
     {
         [Theory]
         [InlineData(0, 0, Direction.N, "0,0,N")]
