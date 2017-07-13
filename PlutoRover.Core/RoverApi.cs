@@ -11,20 +11,23 @@
 
         public string Process(string input)
         {
-            switch(input)
+            foreach(var command in input ?? "")
             {
-                case "F":
-                    _rover.MoveForwards();
-                    break;
-                case "B":
-                    _rover.MoveBackwards();
-                    break;
-                case "L":
-                    _rover.TurnLeft();
-                    break;
-                case "R":
-                    _rover.TurnRight();
-                    break;
+                switch (command)
+                {
+                    case 'F':
+                        _rover.MoveForwards();
+                        break;
+                    case 'B':
+                        _rover.MoveBackwards();
+                        break;
+                    case 'L':
+                        _rover.TurnLeft();
+                        break;
+                    case 'R':
+                        _rover.TurnRight();
+                        break;
+                }
             }
 
             return _rover.GetLocation();
