@@ -3,6 +3,7 @@
     public interface IGrid
     {
         Position Wrap(Position position);
+        bool IsValid(Position position);
     }
 
     public class Grid : IGrid

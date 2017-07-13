@@ -13,14 +13,26 @@
             _grid = grid;
         }
 
-        public void MoveForwards()
+        public bool MoveForwards()
         {
-            _position = _grid.Wrap(_position + Vector.From(_heading));
+            var newPosition = _grid.Wrap(_position + Vector.From(_heading));
+
+            if (!_grid.IsValid(newPosition))
+                return false;
+
+            _position = newPosition;
+            return true;
         }
 
-        public void MoveBackwards()
+        public bool MoveBackwards()
         {
-            _position = _grid.Wrap(_position - Vector.From(_heading));
+            var newPosition = _grid.Wrap(_position - Vector.From(_heading));
+
+            if (!_grid.IsValid(newPosition))
+                return false;
+
+            _position = newPosition;
+            return true;
         }
 
         public void TurnLeft()
